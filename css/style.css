@@ -11,32 +11,24 @@
 
 body {
     width: 960px;
-    background: linear-gradient(to bottom, rgb(66, 97, 197), rgb(79, 221, 115));
+    background: linear-gradient(to right, rgb(66, 97, 197), rgb(79, 221, 115));
     min-height: 100vh;
     position: relative;
 }
 
 .gradient {
-    position: absolute;
+    position: relative;
     font-family: Jost;
-    top: 20px;
-    left: 30px;
+    top: 3vh;
+    left: 28vh;
     font-size: 3em;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-    background-image: linear-gradient(#1effb4, #5eaa32);
+    background-image: linear-gradient(#9938e9, #a50a4a);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-}
-
-.text1 {
-    position: absolute;
-    font-size: 1.2rem;
-    font-weight: 800;
-    left: 20px;
-    top: 600px;
 }
 
 
@@ -49,7 +41,7 @@ body {
 .img1 {
     position: absolute;
     top: -15px;
-    width: 590px;
+    width: 700px;
     height: 420px;
 }
 
@@ -62,10 +54,11 @@ body {
 
 .flip-frame {
     position: absolute;
-    border: 7px solid rgb(0, 0, 0);
+    border: 7px solid rgb(199, 157, 18);
+    box-shadow: 10px 2px 15px 8px black;
     border-radius: 20px;
-    width: 600px;
-    height: 400px;
+    width: 650px;
+    height: 405px;
     top: 100px;
     left: 350px;
     overflow: hidden;
@@ -111,7 +104,8 @@ body {
     width: 100%;
 }
 
-.flip-frame .slide.front, .flip-frame .slide.back {
+.flip-frame .slide.front,
+.flip-frame .slide.back {
     left: 0;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -133,8 +127,8 @@ body {
 
 .nav {
     position: absolute;
-    top: 540px;
-    left: 400px;
+    top: 85vh;
+    left: 68vh;
     width: 500px;
     height: 40px;
     display: flex;
