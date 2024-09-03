@@ -10,17 +10,17 @@
 }
 
 body {
-    width: 960px;
-    background: linear-gradient(to right, rgb(66, 97, 197), rgb(79, 221, 115));
+    background: linear-gradient(to right, rgb(124, 80, 194), rgb(196, 162, 50));
     min-height: 100vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .gradient {
-    position: relative;
     font-family: Jost;
-    top: 3vh;
-    left: 28vh;
     font-size: 3em;
     font-weight: bold;
     text-align: center;
@@ -29,6 +29,7 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    margin-bottom: 20px;
 }
 
 
@@ -53,14 +54,12 @@ body {
 }
 
 .flip-frame {
-    position: absolute;
-    border: 7px solid rgb(199, 157, 18);
-    box-shadow: 10px 2px 15px 8px black;
+    margin: auto;
+    border: 7px solid rgb(32, 212, 92);
+    box-shadow: 10px 12px 12px 4px black;
     border-radius: 20px;
     width: 650px;
     height: 405px;
-    top: 100px;
-    left: 350px;
     overflow: hidden;
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
@@ -126,13 +125,13 @@ body {
 }
 
 .nav {
-    position: absolute;
-    top: 85vh;
-    left: 68vh;
-    width: 500px;
-    height: 40px;
+    margin: auto;
     display: flex;
-    gap: 230px;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 60px;
+    width: 500px;
+    height: 50px;
 }
 
 .nav button {
@@ -156,4 +155,50 @@ button:active {
 
 button:hover {
     background-color: rgb(89, 98, 104);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (min-width: 300px) and (max-width: 1280px) {
+    .body {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .gradient {
+        font-size: 2em;
+    }
+
+    .flip-frame {
+        margin: auto;
+        width: 600px;
+        height: 405px;
+        border-width: 5px;
+    }
+
+    .nav {
+        flex-direction: column;
+        margin-top: 80px;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* Responsividade para desktops */
+@media (min-width: 1360px) and (max-width: 2440px) {
+    .flip-frame {
+        width: 100%;
+        min-width: 655px;
+        min-height: 405px;
+        border-width: 7px;
+    }
+
+    .nav {
+        width: 80%;
+    }
 }

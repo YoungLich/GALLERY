@@ -1,30 +1,31 @@
 function FlipSlider(options) {
-    // Private Vars
+    // Variáveis privadas
     var container = options.container,
         startSlideIndex = options.startIndex || 0,
         slider = container.querySelector(".flip"),
         slides = slider.querySelectorAll(".slide"),
         nextBtn = container.querySelector(".next"),
-        PrevBtn = container.querySelector(".prev"),
+        prevBtn = container.querySelector(".prev"),
+        downloadBtn = container.querySelector(".download"),
         timeout,
         frontSlide,
         backSlide;
 
-    // == public functions == //
+    // == Funções públicas == //
 
-    //Next flip
+    // Próxima rotação
     this.nextFlip = function () {
         doFlip(1);
     };
 
-    //previous flip
+    // Rotação anterior
     this.prevFlip = function () {
         doFlip(-1);
     };
 
-    // == private functions == //
+    // == Funções privadas == //
 
-    // flip slides
+    // Rotacionar slides
     function doFlip(dir) {
         if (!container.querySelector(".animate")) {
             slider.classList.add("animate");
@@ -45,7 +46,7 @@ function FlipSlider(options) {
         }
     }
 
-    // reset slides on completion
+    // Resetar slides ao concluir a rotação
     function resetSlides() {
         frontSlide = slider.querySelector(".front");
         backSlide = slider.querySelector(".back");
@@ -57,12 +58,9 @@ function FlipSlider(options) {
         slider.classList.remove("animateL");
     }
 
-    // find slide to set it back-flip
-
+    // Encontrar o slide que será rotacionado para trás
     function findBack(dir) {
-        var frontIndex,
-            target,
-            slideCount;
+        var frontIndex, target, slideCount;
 
         slides = slider.querySelectorAll(".slide");
         slideCount = slides.length;
@@ -82,19 +80,32 @@ function FlipSlider(options) {
         return target;
     }
 
-    // Init
+    // Função para download da imagem atualmente visível
+    function downloadCurrentImage() {
+        var frontSlide = slider.querySelector(".front");
+        var imgElement = frontSlide.querySelector("img");
+        var imgURL = imgElement.src;
+
+        var link = document.createElement("a");
+        link.href = imgURL;
+        link.download = `image-${Array.from(slides).indexOf(frontSlide) + 1}.jpg`; // Nome do arquivo para download
+        link.click();
+    }
+
+    // Inicialização
     (function (instance) {
-        // Setting First Slide
+        // Definir o primeiro slide
         startSlideIndex = startSlideIndex >= slides.length ? 0 : startSlideIndex;
         slides[startSlideIndex].classList.add("front");
 
-        // Event Bindings
+        // Vinculação de eventos
         nextBtn.onclick = instance.nextFlip;
-        PrevBtn.onclick = instance.prevFlip;
+        prevBtn.onclick = instance.prevFlip;
+        downloadBtn.onclick = downloadCurrentImage;
     })(this);
 }
 
-// Creating Instance of the slider
+// Criando a instância do slider
 var flip1 = new FlipSlider({
     startIndex: 0,
     container: document.querySelector(".flip-slider")
