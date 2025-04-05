@@ -1,0 +1,39 @@
+/* Responsividade para Telas Pequenas */
+@media (max-width: 600px) {
+    .frame-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav button {
+        width: 100%;
+    }
+
+    .mobile-frame {
+        height: clamp(250px, 90vh, 350px);
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .desktop-frame {
+        height: clamp(150px, 45vw, 180px);
+    }
+
+    .mobile-frame {
+        height: clamp(230px, 85vh, 300px);
+    }
+
+    .mobile-frame::before {
+        width: 30%;
+        height: 12px;
+    }
+}
