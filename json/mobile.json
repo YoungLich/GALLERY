@@ -121,7 +121,7 @@
             "class": "img"
         },
         {
-            "src": "images/mobile/foto_31.jpg",
+            "src": "images/mobile/foto_31.png",
             "class": "img"
         },
         {
@@ -174,30 +174,6 @@
         },
         {
             "src": "images/mobile/foto_44.jpg",
-            "class": "img"
-        },
-        {
-            "src": "images/mobile/foto_45.jpg",
-            "class": "img"
-        },
-        {
-            "src": "images/mobile/foto_46.jpg",
-            "class": "img"
-        },
-        {
-            "src": "images/mobile/foto_47.jpg",
-            "class": "img"
-        },
-        {
-            "src": "images/mobile/foto_48.jpg",
-            "class": "img"
-        },
-        {
-            "src": "images/mobile/foto_49.jpg",
-            "class": "img"
-        },
-        {
-            "src": "images/mobile/foto_50.jpg",
             "class": "img"
         }
     ]
